@@ -17,15 +17,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class VehicleImages {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String fileName;
+    private String fileType;
     @Lob
     @Column(columnDefinition = "LONGBBLOB")
-    private Byte[] image;
+    private Byte[] data;
 
     @ManyToOne
     @JoinColumn(name = "chassis_number")
